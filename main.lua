@@ -1,9 +1,17 @@
 
+require("input/key")
+require("TIC")
+require("TIC80Timer")
+
+require("primitives2D")
+
+
+--load
 function love.load()
     tileset = love.graphics.newImage("assets/countryside.png")
 
     tileW, tileH = 32,32
-    local tilesetWidth, tilesetHeight = tileset:getWidth(), tileset:getHeight()
+    tilesetWidth, tilesetHeight = tileset:getWidth(), tileset:getHeight()
 
     QuadInfo = {
         {0,0},
@@ -24,10 +32,13 @@ function love.load()
         {2,3,1},
         {2,1,1},
         {2,1,1},
-        {2,2,2}
+        {2,2,2,2,2,2,2,2,2,2}
     }
+
+
 end
 
+--draw
 Player = {
     x = 64,
     y = 32 
@@ -52,42 +63,48 @@ function love.draw()
 
     
     love.graphics.draw(tileset,Quad[2],Player.x,Player.y)
+    
+    TICDraw()
+
 end
 
+--update
 function love.update(dt)
-    if key("space")then
-        love.graphics.print("Space",100,400)
-    end
 
+        tileX = math.floor(Player.x/tileW)+1
+        tileY = math.floor(Player.y/tileH)+1
+
+
+
+        if key('d',0.01) and mget(tileX+1,tileY)~=2 then
+            Player.x = Player.x + 32
+            
+        end
+
+        if keyp('a') and mget(tileX-1,tileY)~=2 then
+            Player.x = Player.x - 32
+        end
+
+        if keyp('w') and mget(tileX,tileY-1)~=2 then
+            Player.y = Player.y - 32
+        end
+
+        if keyp('s') and mget(tileX,tileY+1)~=2 then
+            Player.y = Player.y + 32
+        end
+    
+        updateTime(dt) -- to emulate time() source is TIC80Timer.lua
+        TIC()
 end
 
 
 
 function love.keypressed(k,scancode,isRepeat)
-    if isRepeat then
-        love.graphics.print("isrepeated",100,300)
-    end
 
     function love.keypressed(keys)
 
-        tileX = math.floor(Player.x/tileW)+1
-        tileY = math.floor(Player.y/tileH)+1
 
-        if keys == 'd' and mget(tileX+1,tileY)~=2 then
-            Player.x = Player.x + 32
-        end
 
-        if keys == 'a' and mget(tileX-1,tileY)~=2 then
-            Player.x = Player.x - 32
-        end
-
-        if keys == 'w' and mget(tileX,tileY-1)~=2 then
-            Player.y = Player.y - 32
-        end
-
-        if keys == 's' and mget(tileX,tileY+1)~=2 then
-            Player.y = Player.y + 32
-        end
         
     end
 end
@@ -103,11 +120,3 @@ function mget(x,y,value)
         return TileTable[y][x]
     end
 end
-
-function key(k)
-    if not k then
-        return false
-    end
-        return love.keyboard.isDown(k)
-end
-
