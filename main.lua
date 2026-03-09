@@ -51,7 +51,7 @@ end
 
 function love.draw()
 
-
+    --draw map
     for rowIndex = 1,#TileTable do
 
         local row = TileTable[rowIndex]
@@ -69,37 +69,15 @@ function love.draw()
     
     love.graphics.draw(tileset,Quad[2],Player.x,Player.y)
     
+    --main draw
     TICDraw()
 
 end
 
 --update
 function love.update(dt)
-
-        tileX = math.floor(Player.x/tileW)+1
-        tileY = math.floor(Player.y/tileH)+1
-
-
-
-        if key('d',0.01) and mget(tileX+1,tileY)~=2 then
-            Player.x = Player.x + 32
-            
-        end
-
-        if keyp('a') and mget(tileX-1,tileY)~=2 then
-            Player.x = Player.x - 32
-        end
-
-        if keyp('w') and mget(tileX,tileY-1)~=2 then
-            Player.y = Player.y - 32
-        end
-
-        if keyp('s') and mget(tileX,tileY+1)~=2 then
-            Player.y = Player.y + 32
-        end
     
         updateTime(dt) -- to emulate time() source is TIC80Timer.lua
-        --TIC()
         TIC()
 end
 

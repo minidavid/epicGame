@@ -22,12 +22,35 @@ function TICDraw()
     Print(text)
     circ(100,100,10,255,255,255,255)
 
-
+    
     
 end
-
 
 function TIC()
     local mx,my,ml,mm,mr = mouse()
     text = mx
+
+
+    ---player code
+    tileX = math.floor(Player.x/tileW)+1
+    tileY = math.floor(Player.y/tileH)+1
+
+
+
+    if key('d',0.01) and mget(tileX+1,tileY)~=2 then
+        Player.x = Player.x + 32
+    end
+
+    if keyp('a') and mget(tileX-1,tileY)~=2 then
+        Player.x = Player.x - 32
+    end
+
+    if keyp('w') and mget(tileX,tileY-1)~=2 then
+        Player.y = Player.y - 32
+    end
+
+    if keyp('s') and mget(tileX,tileY+1)~=2 then
+        Player.y = Player.y + 32
+    end
+
 end
