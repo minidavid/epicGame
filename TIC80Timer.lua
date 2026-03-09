@@ -6,5 +6,5 @@ function updateTime(dt)
 end
 
 function time()
-    return totalTime * 1000
+    return totalTime*1000
 end

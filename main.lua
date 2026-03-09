@@ -1,13 +1,22 @@
 
+---IMPORT STUFF
 require("input/key")
-require("TIC")
+require("primitives2D")
 require("TIC80Timer")
 
-require("primitives2D")
+require("TIC80Print")
+require("mouse")
+require("mget")
+require("mset")
+
+require("TIC")
+
 
 
 --load
 function love.load()
+
+
     tileset = love.graphics.newImage("assets/countryside.png")
 
     tileW, tileH = 32,32
@@ -35,14 +44,10 @@ function love.load()
         {2,2,2,2,2,2,2,2,2,2}
     }
 
-
 end
 
 --draw
-Player = {
-    x = 64,
-    y = 32 
-}
+
 
 function love.draw()
 
@@ -94,29 +99,23 @@ function love.update(dt)
         end
     
         updateTime(dt) -- to emulate time() source is TIC80Timer.lua
+        --TIC()
         TIC()
 end
 
 
 
+
+
+
+
+
+---- IF Additional keyp logic required... ----
 function love.keypressed(k,scancode,isRepeat)
 
     function love.keypressed(keys)
 
 
-
         
-    end
-end
-
-function mset(x,y,value)
-    if TileTable[y] then
-        TileTable[y][x] = value
-    end
-end
-
-function mget(x,y,value)
-    if TileTable[y] then
-        return TileTable[y][x]
     end
 end
