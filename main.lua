@@ -35,12 +35,12 @@ function love.load()
         Quad[i] = love.graphics.newQuad(info[1],info[2],tileW,tileH,tilesetWidth,tilesetHeight)
     end
 
-    TileTable={
+    TileTable = {
         {2,2,2,2,2,2,2,2,2,2},
-        {2,2,1},
-        {2,3,1},
-        {2,1,1},
-        {2,1,1},
+        {2,2,1,1,1,1,1,1,1,2},
+        {2,3,1,1,1,1,1,1,1,2},
+        {2,1,1,2,1,1,1,1,1,2},
+        {2,1,1,1,1,1,1,1,1,2},
         {2,2,2,2,2,2,2,2,2,2}
     }
 
@@ -52,21 +52,8 @@ end
 function love.draw()
 
     --draw map
-    for rowIndex = 1,#TileTable do
+    DrawMap()
 
-        local row = TileTable[rowIndex]
-
-        for columnIndex = 1, #row do
-            local num = row[columnIndex]
-            if num>0 then
-                local x = (columnIndex-1)*tileW
-                local y = (rowIndex-1)*tileH
-                love.graphics.draw(tileset,Quad[num],x,y)
-            end
-        end
-    end
-
-    
     love.graphics.draw(tileset,Quad[2],Player.x,Player.y)
     
     --main draw
@@ -82,7 +69,21 @@ function love.update(dt)
 end
 
 
+function DrawMap()
+    for rowIndex = 1,#TileTable do
 
+        local row = TileTable[rowIndex]
+
+        for columnIndex = 1, #row do
+            local num = row[columnIndex]
+            if num>0 then
+                local x = (columnIndex-1)*tileW
+                local y = (rowIndex-1)*tileH
+                love.graphics.draw(tileset,Quad[num],x,y)
+            end
+        end
+    end
+end
 
 
 
@@ -93,7 +94,7 @@ function love.keypressed(k,scancode,isRepeat)
 
     function love.keypressed(keys)
 
-
         
     end
+
 end
