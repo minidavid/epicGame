@@ -46,6 +46,24 @@ function circb(x,y,radius,color1,color2,color3,alpha)
     love.graphics.pop()
 end
 
+-- elli
+
+function elli(x,y,radiusx,radiusy,segments,color1,color2,color3,alpha)
+    love.graphics.push()
+
+    love.graphics.setColor(color1,color2,color3,alpha)
+    love.graphics.ellipse("fill",x,y,radiusx,radiusy,segments)
+    love.graphics.pop()
+end
+
+function ellib(x,y,radiusx,radiusy,segments,color1,color2,color3,alpha)
+    love.graphics.push()
+
+    love.graphics.setColor(color1,color2,color3,alpha)
+    love.graphics.ellipse("line",x,y,radiusx,radiusy,segments)
+    love.graphics.pop()
+end
+
 ---line
 function line(x1,y1,x2,y2,color1,color2,color3,alpha)
     love.graphics.push()
