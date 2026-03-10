@@ -49,7 +49,7 @@ function TIC()
     end
 
     if keyp('w') and mget(tileX,tileY-1)~=2 then
-        Player.y = Player.y - 32
+        Player.y = Player.y - 32 
     end
 
     if keyp('s') and mget(tileX,tileY+1)~=2 then

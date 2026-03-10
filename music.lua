@@ -13,5 +13,6 @@ end
 
 --add sfx:play()/ sfx:pause()/ sfx:stop() logic here
 function sfx()
+    if sfx:is
     sfx:play()
 end
