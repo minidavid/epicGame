@@ -37,3 +37,14 @@ __API functions:__
 15. line(x1,y1,x2,y2,color1,color2,color3,alpha)
 16. trib(x1,y1,x2,y2,x3,y3,color1,color2,color3,alpha)
 
+
+__Extra notes__
+I decided to have color1, color2, color3, alpha rather for r,g,b,a rather than the default color palette. I might modify later.
+
+In map.lua:
+- The tileW, tileH defines if your game is 8x8 or 32x32, etc.
+
+- QuadInfo defines the tile objects that you would use. It's like the map ID in TIC80.
+
+- The mapTable is your regular map. You draw it via adding values and tables to the mapTable. 
+

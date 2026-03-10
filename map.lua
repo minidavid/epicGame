@@ -8,12 +8,12 @@ function Map()
     tileW, tileH = 32,32
     tilesetWidth, tilesetHeight = tileset:getWidth(), tileset:getHeight()
 
-    -- Modify QuadInfo to have specific data coordinates for the image. So data at 0,0 has the first data
+    -- Modify QuadInfo to have specific data coordinates for the image. Like map/sprite ID
     QuadInfo = {
-        {0,0},
-        {32,0},
-        {0,32},
-        {32,32}
+        {0,0}, --top left grass
+        {32,0}, --top right box
+        {0,32}, --bottom left grass
+        {32,32} -- bottom right box
     }
 
     Quad = {}
