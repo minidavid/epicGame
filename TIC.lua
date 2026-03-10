@@ -34,7 +34,7 @@ function TIC()
     text = mx
 
 
-    ---player code
+    ---player code for map
     tileX = math.floor(Player.x/tileW)+1
     tileY = math.floor(Player.y/tileH)+1
 
