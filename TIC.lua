@@ -1,4 +1,10 @@
 
+-- THIS IS WHERE YOU WRITE CODE.
+-- MODIFY THE MAP WITH map.lua.
+-- MODIFY THE MAP DATA WITH MAI
+-- YOU COULD STILL USE REGULAR LOVE2D CODE
+
+
 function BOOT()
     Player = {
         x = 64,
@@ -7,9 +13,6 @@ function BOOT()
 end
 
 BOOT()
-
-
-    
 
 
 text = "Art"
@@ -22,7 +25,6 @@ function TICDraw()
     Print(text)
     circ(100,100,10,255,255,255,255)
     ellib(200,300,100,20,3,255,255,255,255)
-
   
     
 end

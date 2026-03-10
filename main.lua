@@ -8,6 +8,7 @@ require("TIC80Print")
 require("mouse")
 require("mget")
 require("mset")
+require("map")
 
 require("TIC")
 
@@ -17,32 +18,9 @@ require("TIC")
 function love.load()
 
 
-    tileset = love.graphics.newImage("assets/countryside.png")
 
-    tileW, tileH = 32,32
-    tilesetWidth, tilesetHeight = tileset:getWidth(), tileset:getHeight()
 
-    QuadInfo = {
-        {0,0},
-        {32,0},
-        {0,32},
-        {32,32}
-    }
-
-    Quad = {}
-
-    for i, info in ipairs(QuadInfo) do
-        Quad[i] = love.graphics.newQuad(info[1],info[2],tileW,tileH,tilesetWidth,tilesetHeight)
-    end
-
-    TileTable = {
-        {2,2,2,2,2,2,2,2,2,2},
-        {2,2,1,1,1,1,1,1,1,2},
-        {2,3,1,1,1,1,1,1,1,2},
-        {2,1,1,2,1,1,1,1,1,2},
-        {2,1,1,1,1,1,1,1,1,2},
-        {2,2,2,2,2,2,2,2,2,2}
-    }
+    Map()
 
 end
 
@@ -70,9 +48,9 @@ end
 
 
 function DrawMap()
-    for rowIndex = 1,#TileTable do
+    for rowIndex = 1,#mapTable do
 
-        local row = TileTable[rowIndex]
+        local row = mapTable[rowIndex]
 
         for columnIndex = 1, #row do
             local num = row[columnIndex]

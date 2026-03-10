@@ -1,5 +1,5 @@
 function mget(x,y,value)
-    if TileTable[y] then
-        return TileTable[y][x]
+    if mapTable[y] then
+        return mapTable[y][x]
     end
 end

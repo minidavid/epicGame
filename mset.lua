@@ -1,5 +1,5 @@
 function mset(x,y,value)
-    if TileTable[y] then
-        TileTable[y][x] = value
+    if mapTable[y] then
+        mapTable[y][x] = value
     end
 end
