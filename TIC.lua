@@ -25,8 +25,8 @@ function TICDraw()
     Print(text)
     circ(100,100,10,255,255,255,255)
     ellib(200,300,100,20,3,255,255,255,255)
-  
-    
+
+
 end
 
 function TIC()
