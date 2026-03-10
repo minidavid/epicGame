@@ -1,31 +1,28 @@
 
 ---IMPORT STUFF
-require("input/key")
-require("primitives2D")
-require("TIC80Timer")
+require("TIC80api/input/key.lua")
+require("TIC80api/primitives/primitives2D.lua")
+require("TIC80api/TIC80Timer.lua")
 
-require("TIC80Print")
-require("mouse")
-require("mget")
-require("mset")
+require("TIC80api/output/TIC80Print.lua")
+require("TIC80api/input/mouse.lua")
+require("TIC80api/map/mget.lua")
+require("TIC80api/map/mset.lua")
 require("map")
 
 require("TIC")
 
 
 
---load
+-- LOAD --
 function love.load()
-
-
-
 
     Map()
 
 end
 
---draw
 
+-- DRAW --
 
 function love.draw()
 
@@ -39,7 +36,7 @@ function love.draw()
 
 end
 
---update
+-- UPDATE --
 function love.update(dt)
     
         updateTime(dt) -- to emulate time() source is TIC80Timer.lua
@@ -47,6 +44,9 @@ function love.update(dt)
 end
 
 
+
+
+----------------------
 function DrawMap()
     for rowIndex = 1,#mapTable do
 
@@ -62,7 +62,7 @@ function DrawMap()
         end
     end
 end
-
+-----------------------
 
 
 
@@ -71,7 +71,7 @@ end
 function love.keypressed(k,scancode,isRepeat)
 
     function love.keypressed(keys)
-
+        
         
     end
 
