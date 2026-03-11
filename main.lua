@@ -1,13 +1,16 @@
 
 ---IMPORT STUFF
-require("TIC80api/input/key.lua")
-require("TIC80api/primitives/primitives2D.lua")
-require("TIC80api/TIC80Timer.lua")
+require("TIC80api/input/key")
+require("TIC80api/input/mouse")
 
-require("TIC80api/output/TIC80Print.lua")
-require("TIC80api/input/mouse.lua")
-require("TIC80api/map/mget.lua")
-require("TIC80api/map/mset.lua")
+require("TIC80api/primitives/primitives2D")
+require("TIC80api/TIC80Timer")
+
+require("TIC80api/map/mget")
+require("TIC80api/map/mset")
+
+require("TIC80api/output/TIC80Print")
+
 require("map")
 
 require("TIC")
