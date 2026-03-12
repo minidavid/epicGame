@@ -10,6 +10,8 @@ require("TIC80api/TIC80Timer")
 require("TIC80api/map/mget")
 require("TIC80api/map/mset")
 
+require("TIC80api/cls")
+
 require("TIC80api/output/TIC80Print")
 
 
@@ -32,7 +34,6 @@ end
 
 function love.draw()
 
-    love.graphics.setBackgroundColor(255,255,255,255)
     --draw map
     DrawMap()
  

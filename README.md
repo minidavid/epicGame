@@ -60,6 +60,7 @@ The rest you know.
 
 __Extra notes__
 I decided to have color1, color2, color3, alpha rather for r,g,b,a rather than the default color palette. I might modify later.
+These each are from 0 to 1.
 
 In map.lua:
 - The tileW, tileH defines if your game is 8x8 or 32x32, etc.
