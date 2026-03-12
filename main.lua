@@ -1,5 +1,6 @@
 
 ---IMPORT STUFF
+require("TIC80api/output/sprite")
 require("TIC80api/input/key")
 require("TIC80api/input/mouse")
 
@@ -11,6 +12,7 @@ require("TIC80api/map/mset")
 
 require("TIC80api/output/TIC80Print")
 
+
 require("map")
 
 require("TIC")
@@ -20,6 +22,7 @@ require("TIC")
 -- LOAD --
 function love.load()
 
+    LoadSpr()
     Map()
 
 end
@@ -29,23 +32,24 @@ end
 
 function love.draw()
 
+    love.graphics.setBackgroundColor(255,255,255,255)
     --draw map
     DrawMap()
+ 
 
-    love.graphics.draw(tileset,Quad[2],Player.x,Player.y)
-    
     --main draw
     TICDraw()
+    
 
 end
 
 -- UPDATE --
 function love.update(dt)
-    
+
         updateTime(dt) -- to emulate time() source is TIC80Timer.lua
         TIC()
-end
 
+end
 
 
 

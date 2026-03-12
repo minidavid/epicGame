@@ -26,6 +26,8 @@ function TICDraw()
     circ(100,100,10,255,255,255,255)
     ellib(200,300,100,20,3,255,255,255,255)
 
+    spr(sheet,true,Player.x,Player.y,0+math.floor(time()/4%60/30),0,1,1,1,1,2,0,0,8,8)
+
 
 end
 

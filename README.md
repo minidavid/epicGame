@@ -13,6 +13,7 @@ __How to Write Code with epicGame:__
 1. Go into **TIC.lua** for your regular TIC80 code.
 2. Go into **map.lua** to modify map.
 3. Go into **music.lua** to modify music and sfx.
+4. Go into **sprite.lua** to modify sprite.
 
 __API functions:__
 1. Print(str,x,y,rad,sx,sy,color1,color2,color3,alpha) -- recommended to use Print() and not print() unless you want to make a console app.
@@ -36,6 +37,7 @@ __API functions:__
 14. ellib(x,y,radiusx,radiusy,segments,color1,color2,color3,alpha)
 15. line(x1,y1,x2,y2,color1,color2,color3,alpha)
 16. trib(x1,y1,x2,y2,x3,y3,color1,color2,color3,alpha)
+17. spr(image,alias,x,y,posx,posy,color1,color2,color3,alpha,scale,flip,rotate,w,h)
 
 
 __Extra notes__
