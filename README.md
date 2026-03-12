@@ -37,7 +37,25 @@ __API functions:__
 14. ellib(x,y,radiusx,radiusy,segments,color1,color2,color3,alpha)
 15. line(x1,y1,x2,y2,color1,color2,color3,alpha)
 16. trib(x1,y1,x2,y2,x3,y3,color1,color2,color3,alpha)
-17. spr(image,alias,x,y,posx,posy,color1,color2,color3,alpha,scale,flip,rotate,w,h)
+17. spr(image,alias,posx,posy,x,y,color1,color2,color3,alpha,scale,flip,rotate,w,h)
+
+I didn't add sfx() and music() coz sfx and music is super easy to implement in love2d. Just jump into music.lua, load files in the load function and then play them, or pause or stop.
+
+__spr tips:__
+
+sheet should always get declared in sprite.lua. Give it your custom name as it's the image to get loaded.
+
+Then, true is aliasing. Aliasing is the opposite of antialiasing. It allows for the natural pixel look of the sprite.
+
+The 8*math.floor(time()/4%60/24) is posx for animation. Posx is the start of the x position of the image. So it's like the id in regular TIC80. Why do we multiply with 8? To prevent the sliding animation across the whole sprite. It skips animation. 
+
+posy is used to declare the y position of the image.
+
+Why did we use posx and posy? We use it due to love2d requiring Quads. It slices a spritesheet into small parts.
+
+x, y is regular x & y you know and love.
+
+The rest you know.
 
 
 __Extra notes__

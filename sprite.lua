@@ -7,7 +7,7 @@ end
 
 posx1 = 0
 
-function spr(image,alias,x,y,posx,posy,color1,color2,color3,alpha,scale,flip,rotate,w,h)
+function spr(image,alias,posx,posy,x,y,color1,color2,color3,alpha,scale,flip,rotate,w,h)
 
     love.graphics.push()
 

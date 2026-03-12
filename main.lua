@@ -1,6 +1,6 @@
 
 ---IMPORT STUFF
-require("TIC80api/output/sprite")
+require("sprite")
 require("TIC80api/input/key")
 require("TIC80api/input/mouse")
 
