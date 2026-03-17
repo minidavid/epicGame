@@ -18,8 +18,11 @@ require("TIC80api/output/TIC80Print")
 require("map")
 
 require("TIC")
+require("scale window")
 
 
+
+Scaler() -- this function is used in scale window.lua
 
 -- LOAD --
 function love.load()
@@ -34,13 +37,15 @@ end
 
 function love.draw()
 
-    --draw map
-    DrawMap()
- 
 
-    --main draw
-    TICDraw()
+    push:start() --push modifies the scaler-- you don't need to remove it.
+        --draw map
     
+
+        --main draw
+        TICDraw()
+    
+    push:finish() --push modifies the scaler -- you don't need to remove it.
 
 end
 
@@ -55,7 +60,7 @@ end
 
 
 ----------------------
-function DrawMap()
+function DrawMap(x,y)
     for rowIndex = 1,#mapTable do
 
         local row = mapTable[rowIndex]
@@ -63,9 +68,9 @@ function DrawMap()
         for columnIndex = 1, #row do
             local num = row[columnIndex]
             if num>0 then
-                local x = (columnIndex-1)*tileW
-                local y = (rowIndex-1)*tileH
-                love.graphics.draw(tileset,Quad[num],x,y)
+                local posx = (columnIndex-1)*tileW
+                local posy = (rowIndex-1)*tileH
+                love.graphics.draw(tileset,Quad[num],posx+x,posy+y)
             end
         end
     end

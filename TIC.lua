@@ -19,6 +19,8 @@ text = "Art"
 function TICDraw()
 
     cls(1,0,0,1)
+    DrawMap(0,0)
+
     circb(10,10,100+math.sin(time()),1,1,1,1)
     pix(10,100,1,1,1,1)
     rectb(10,10,100,100,1,1,1,1)
@@ -51,7 +53,7 @@ function TIC()
     end
 
     if keyp('w') and mget(tileX,tileY-1)~=2 then
-        Player.y = Player.y - 32 
+        Player.y = Player.y - 32
     end
 
     if keyp('s') and mget(tileX,tileY+1)~=2 then
@@ -59,3 +61,4 @@ function TIC()
     end
 
 end
+
