@@ -22,7 +22,7 @@ require("scale window")
 
 
 
-Scaler() -- this function is used in scale window.lua
+ScalerWindow() -- this function is used in scale window.lua
 
 -- LOAD --
 function love.load()

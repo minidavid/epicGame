@@ -1,5 +1,5 @@
 --modify this however you wish.
-function Scaler()
+function ScaleWindow()
     --Scaler requires push li
     push = require("push/push")
 
