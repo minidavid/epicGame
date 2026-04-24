@@ -83,9 +83,6 @@ end
 ---- IF Additional keyp logic required... ----
 function love.keypressed(k,scancode,isRepeat)
 
-    function love.keypressed(keys)
-        
-        
-    end
 
+    
 end
